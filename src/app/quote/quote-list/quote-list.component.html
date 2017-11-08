@@ -1,0 +1,12 @@
+<fieldset>
+    <legend><h1>Quotes List</h1></legend>
+    <div  *ngFor="let q of list; let i = index">
+        <h2>{{q.content}}</h2>
+          <p>-{{q.author}}</p>
+          <p>{{q.rating}}</p>
+          <button (click)="vote_up(i)">Vote Up!</button>
+          <button (click)="vote_down(i)">Vote Down</button>
+          <button (click)="delete(i)">Delete</button>
+    </div>
+    
+</fieldset>

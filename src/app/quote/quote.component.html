@@ -1,0 +1,22 @@
+<h1>Add A Quote!</h1>
+<form (submit)="addQuote()">
+  <textarea name="quote"
+  required
+  minlength="15"
+  maxlength="500"
+  [(ngModel)] = "quote.content"
+  #content = ngModel
+  ></textarea>
+  <input type="text" name="author"
+  required
+  minlength="2"
+  maxlength="25"
+  [(ngModel)] = "quote.author"
+  #author = ngModel
+  >
+  <input type="submit" value="Add Quote">
+</form>
+{{author.errors | json}}
+{{content.errors | json}}
+
+<app-quote-list [list]="quotes_list"></app-quote-list>
